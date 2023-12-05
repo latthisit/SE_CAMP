@@ -1,2 +1,2 @@
-# SE_CAMP
+# Test code
 test code html&css
