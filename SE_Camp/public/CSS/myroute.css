@@ -1,0 +1,24 @@
+body{
+    background-image: url("https://c0.wallpaperflare.com/preview/893/906/500/vintage-flower-background-watercolor.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body > h1{
+    text-align: center;
+}
+
+.box-number{
+    backdrop-filter: blur(20px);
+    text-align: center;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+}
+
+.box-number{
+    border-radius: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
