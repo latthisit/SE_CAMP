@@ -1,0 +1,32 @@
+.Container-Box{
+    text-align: center;
+}
+
+.form{
+    background-color: antiquewhite;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.form > form{
+    text-align: center;
+}
+
+.lable-detail{
+    margin-bottom: 20px;
+}
+
+form > input{
+    margin-top: 10px;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
