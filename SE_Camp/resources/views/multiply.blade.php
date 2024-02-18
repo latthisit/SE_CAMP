@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Multiplication Table Generator</title>
-        <link rel="stylesheet" href="{{url('CSS/multiply.css')}}">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
+        .container {
+            background-color: #bef0c8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
 
-    </head>
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
 
-    <body>
+        #numberInput {
+            padding: 8px;
+            font-size: 16px;
+        }
 
-        <div class="back01">
-            <div class="back02" id="container">
-                <h1>Multiplication</h1>
-                <input type="number" id="numberInput" placeholder="Enter a number">
-                <button id="generateBtn">Submid</button>
-                <div id="output"></div>
-            </div>
+        #generateTable {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Multiplication</h2>
+
+        <label for="numberInput">Enter a number :</label>
+        <input type="number" id="numberInput" min="1" max="12">
+        <button id="generateTable">Submit</button>
+
+        <div id="resultContainer" class="result">
         </div>
+    </div>
 
+    <script>
+        $(document).ready(function () {
+            $("#generateTable").click(function () {
+                $("#resultContainer").empty();
 
-        <script>
-        $(document).ready(function(){
-            $('#generateBtn').click(function(){
-                var num = $('#numberInput').val();
-                if(!isNaN(num) && num !== ""){
-                    $('#output').empty();
-                    var table = '<h2>Multiplication Table for ' + num + '</h2><ul>';
-                    for(var i = 1; i <= 10; i++){
-                        table += '<h4>' + num + ' x ' + i + ' = ' + (num * i) + '</h4>';
+                var number = $("#numberInput").val();
+
+                if (number && !isNaN(number) && number > 0) {
+
+                    var resultContent = "<p>";
+
+                    for (var i = 1; i <= 12; i++) {
+                        resultContent += number + " × " + i + " = " + (number * i) + "<br>";
                     }
-                    table += '</ul>';
-                    $('#output').append(table);
-                }
-                else {
-                    alert("Please enter a valid number.");
+
+                    resultContent += "</p>";
+
+                    $("#resultContainer").html(resultContent);
+                } else {
+                    alert("Please enter a valid number between 1 and 12.");
                 }
             });
         });
-        </script>
-    </body>
+    </script>
+
+</body>
 </html>
